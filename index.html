@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Up Flowchart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+            color: white;
+        }
+        h1 {
+            color: #89d3ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .node {
+            width: 280px;
+            padding: 1.5rem;
+            margin: 1rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: slideIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .sub-node {
+            width: 240px;
+            padding: 1rem;
+            margin: 0.5rem;
+            background: rgba(113, 186, 255, 0.15);
+            border-radius: 10px;
+            color: #89d3ff;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .arrow {
+            width: 0px;
+            height: 15px;
+            background: linear-gradient(to bottom, #e94560 0%, #89d3ff 100%);
+            margin: 3rem 0;
+            position: relative;
+            animation: bounce 1.5s infinite;
+        }
+        .arrow::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: -6px;
+            width: 14px;
+            height: 14px;
+            border-bottom: 2px solid #e94560;
+            border-right: 2px solid #e94560;
+            transform: rotate(45deg);
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+        .node:hover, .sub-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <h1>Token Up Project Flowchart</h1>
+    <div class="flowchart">
+        <div class="node">User Registration/Login</div>
+        <div class="arrow"></div>
+        <div class="sub-node">User enters credentials</div>
+        <div class="sub-node">Verification & Authentication</div>
+        <div class="arrow"></div>
+        <div class="node">Certificate Upload</div>
+        <div class="arrow"></div>
+        <div class="sub-node">User uploads certificate (NPTEL or higher)</div>
+        <div class="sub-node">System extracts text & verifies format</div>
+        <div class="arrow"></div>
+        <div class="node">Blockchain Verification</div>
+        <div class="arrow"></div>
+        <div class="sub-node">Certificate details sent to blockchain</div>
+        <div class="sub-node">Blockchain validates authenticity</div>
+        <div class="arrow"></div>
+        <div class="node">Token Allocation</div>
+        <div class="arrow"></div>
+        <div class="sub-node">Verified certificate earns tokens</div>
+        <div class="sub-node">Tokens added to user’s profile</div>
+        <div class="arrow"></div>
+        <div class="node">Leaderboard Update</div>
+        <div class="arrow"></div>
+        <div class="sub-node">Tokens are compared</div>
+        <div class="sub-node">Leaderboard is updated</div>
+        <div class="arrow"></div>
+        <div class="node">User Dashboard</div>
+        <div class="arrow"></div>
+        <div class="sub-node">Users can see rankings</div>
+        <div class="sub-node">Users track their progress</div>
+    </div>
+</body>
+</html>
